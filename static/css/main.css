@@ -1,0 +1,145 @@
+*{box-sizing: border-box;}
+
+.contaiter{
+	padding: 25px;
+}
+
+.card{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+}
+
+.card:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+
+.btn{
+	border: none;
+	padding: 10px 12px;
+	cursor: pointer;
+}
+
+image{
+	display: block;
+	width: 100%;
+	
+}
+
+.modal{
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: silver;
+	display: none;
+	
+}
+
+.modal-content{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 5% auto;
+	
+}
+
+.btn-close{
+	float: right;
+	padding: 12px 14px;
+	font-size: 35px;
+}
+
+.animate{
+	animation-name: zoom;
+	animation-duration: 1.3s;
+}
+
+.fade{
+	animation-name: zoom-out;
+	animation-duration: 2s;
+}
+
+@keyframes zoom{
+	from{
+		transform: scale(0);
+	}
+	to{
+		transform: scale(1);
+	}
+}
+
+@keyframes zoom-out{
+	from{
+		transform: scale(1);
+	}
+	to{
+		transform: scale(0);
+	}
+}
+
+
+
+
+.row:after{
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.quarter{
+	padding: 5px;
+	float: left;
+	width: 25%;
+	
+}
+.half{
+	padding: 5px;
+	float: left;
+	width: 50%;
+	
+}
+.third{
+	padding: 5px;
+	float: left;
+	width: 75%;
+}
+
+.column{
+	float: left;
+	width: 25%;
+}
+
+
+.bg-red{
+	
+	background-color: red;
+}
+
+.bg-green{
+	background-color: green;
+}
+
+@media screen and (max-width: 480px){
+	.quarter, .half, .third{
+		width: 100%;
+		
+	}
+	.column{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.quarter, .half, .third{
+		width: 100%;
+		
+	}
+	.column{
+		width: 100%;
+	}
+}
+
+
+
+

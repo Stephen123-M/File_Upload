@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charser="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Login To Continue</title>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+
+</head>
+<body>
+<div class="center">
+
+<h2 class="center">LOGIN</h2>
+
+<div class="card bg-purple">
+<div class="container">
+
+<form action="{% url 'users:Login_User' %}" method="post">{% csrf_token %}
+
+	<label>USERNAME</label>
+		<input type="text" name="username" />
+			<label>PASSWORD</label>
+		<input type="password" name="password" />
+			<input type="submit" value="LOGIN" class="btn" />
+
+
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

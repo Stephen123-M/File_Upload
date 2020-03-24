@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charser="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>File Manager</title>
+	{% load static %}
+	<link href="{% static 'css/main.css' %}" rel="stylesheet"  />
+	<script src="{% static 'js/java.js' %}" type="text/javascript" ></script>
+
+</head>
+<body>
+<h2>Welcome to my app</h2>
+
+
+
+{% if user.is_authenticated %}
+
+<div class="modal animate" id="myModal">
+<button class="close-btn bg-red" onclick="return hide();">&times;</button>
+				<div class="modal-content">
+					
+					<div class="container">
+						<img  id="modalImage" class="image" />
+						<p id="id"></p>
+					
+					</div>
+					
+				
+				</div>
+			
+			</div>
+<div class="row">
+	<div class="quarter">
+	<div class="container">
+		<p>You are currently logged in as <strong>{{user.username}}</strong></p>
+		 <button class="btn bg-red"><a href="">logout</a></button>
+		
+		</div>
+			<div class="container">
+				<form action="{% url 'uploads:upload' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+					<label>File To Upload</label><br>
+					<input type="file" name="picture" required /><br>
+					<input type="submit" value="UPLOAD" class="btn bg-green">
+				
+				</form>
+			
+			</div>
+	</div>
+	
+		<div class="third">
+		
+			<div class="row">
+				{% for i in picture %}
+					<div class="half">
+						<div class="card">
+							<div class="container">
+								<img src="{{i.photo.url}}" class="image" id="myImage" onclick="return show(this);" alt="{{i.id}}" />
+							</div>
+						</div>
+					</div>
+				
+				
+				{% endfor %}
+			
+			</div>
+			
+		</div>
+		
+			
+
+</div>
+
+{% else %}
+
+<p>Please login</p>
+
+{% endif %}
+
+
+
+</body>
+</html>
